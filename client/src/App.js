@@ -7,6 +7,7 @@ import AddUser from "./components/add-user.component";
 import User from "./components/user.component";
 import UserList from "./components/users-list.component";
 
+// HEADER WEBISTEEEEEE
 class App extends Component {
   render() {
     return (
@@ -33,7 +34,7 @@ class App extends Component {
           <Switch>
             <Route exact path={["/", "/users"]} component={UserList} />
             <Route exact path="/add" component={AddUser} />
-            <Route path="/users/:id" component={User} />
+            <Route path="/users/:UserID" component={User} />
           </Switch>
         </div>
       </div>

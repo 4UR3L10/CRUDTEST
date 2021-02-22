@@ -6,7 +6,7 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
   if (!req.body.UserFullName) {
     res.status(400).send({
-      message: "Content can not be empty!",
+      message: "Content cannot be empty!",
     });
     return;
   }
@@ -19,6 +19,7 @@ exports.create = (req, res) => {
     EmlAddrssVld: req.body.EmlAddrssVld,
     NickName: req.body.NickName,
     AnonymusStat: req.body.AnonymusStat,
+    published: req.body.published ? req.body.published : false,
   };
 
   // Save User in the database
@@ -92,7 +93,7 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete a User with the specified id in the request
+// Delete a User with the specified UserID in the request
 exports.delete = (req, res) => {
   const UserID = req.params.UserID;
 

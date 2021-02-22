@@ -12,14 +12,14 @@ module.exports = (app) => {
   // Retrieve all published users
   router.get("/published", users.findAllPublished);
 
-  // Retrieve a single user with id
-  router.get("/:id", users.findOne);
+  // Retrieve a single user with UserID
+  router.get("/:UserID", users.findOne);
 
-  // Update a user with id
-  router.put("/:id", users.update);
+  // Update a user with UserID
+  router.put("/:UserID", users.update);
 
-  // Delete a user with id
-  router.delete("/:id", users.delete);
+  // Delete a user with UserID
+  router.delete("/:UserID", users.delete);
 
   // delete all users
   router.delete("/", users.deleteAll);

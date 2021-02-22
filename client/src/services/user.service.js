@@ -2,7 +2,7 @@ import http from "../http-common";
 
 class UserDataService {
   getAll() {
-    return http.get("/users");
+    return http.get("/user");
   }
 
   get(UserID) {

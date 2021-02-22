@@ -62,6 +62,16 @@ export default class AddUser extends Component {
   }
 
   saveUser() {
+    console.log("+++++++++++++++++++++++DEBUGGING++++++++++++++++++++++");
+    console.log("UserID: " + this.state.UserID);
+    console.log("UserFullName: " + this.state.UserFullName);
+    console.log("Password: " + this.state.Password);
+    console.log("EmailAddress: " + this.state.EmailAddress);
+    console.log("EmlAddrssVld: " + this.state.EmlAddrssVld);
+    console.log("NickName: " + this.state.NickName);
+    console.log("AnonymusStat: " + this.state.AnonymusStat);
+    console.log("+++++++++++++++++++++++DEBUGGING++++++++++++++++++++++");
+
     var data = {
       UserID: this.state.UserID,
       UserFullName: this.state.UserFullName,
@@ -71,7 +81,7 @@ export default class AddUser extends Component {
       NickName: this.state.NickName,
       AnonymusStat: this.state.AnonymusStat,
     };
-
+    /*
     UserDataService.create(data)
       .then((response) => {
         this.setState({
@@ -90,6 +100,10 @@ export default class AddUser extends Component {
       .catch((e) => {
         console.log(e);
       });
+    */
+    UserDataService.create(data).catch((e) => {
+      console.log(e);
+    });
   }
 
   newUser() {
@@ -106,6 +120,7 @@ export default class AddUser extends Component {
     });
   }
 
+  // ADD PAGE
   render() {
     return (
       <div className="submit-form">
@@ -119,7 +134,7 @@ export default class AddUser extends Component {
         ) : (
           <div>
             <div className="form-group">
-              <label htmlFor="UserFullName">Title</label>
+              <label htmlFor="UserFullName">UserFullName</label>
               <input
                 type="text"
                 className="form-control"
@@ -132,9 +147,9 @@ export default class AddUser extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="Password">Title</label>
+              <label htmlFor="Password">Password</label>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 id="Password"
                 required
@@ -145,7 +160,7 @@ export default class AddUser extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="EmailAddress">Title</label>
+              <label htmlFor="EmailAddress">EmailAddress</label>
               <input
                 type="text"
                 className="form-control"
@@ -158,7 +173,7 @@ export default class AddUser extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="EmlAddrssVld">Title</label>
+              <label htmlFor="EmlAddrssVld">EmlAddrssVld</label>
               <input
                 type="text"
                 className="form-control"
@@ -184,7 +199,7 @@ export default class AddUser extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="AnonymusStat">Title</label>
+              <label htmlFor="AnonymusStat">AnonymusStat</label>
               <input
                 type="text"
                 className="form-control"
